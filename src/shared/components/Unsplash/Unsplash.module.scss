@@ -1,3 +1,19 @@
+@mixin chevron($cDirection:"right", $cSize: 20px, $cWidth: 1px, $cColor: black) {
+
+  display: block;
+  width: $cSize;
+  height: $cSize;
+  border-top: 1px solid $cColor;
+  border-right: 1px solid $cColor;
+  border-width: $cWidth;
+    
+  @if $cDirection == 'top'    { transform: rotate(-45deg);}
+  @if $cDirection == 'right'  { transform: rotate(45deg);}
+  @if $cDirection == 'bottom' { transform: rotate(135deg);}
+  @if $cDirection == 'left'   { transform: rotate(225deg);}
+
+}
+
 .photosContainer {
     display: flex;
     flex-direction: column;
@@ -16,6 +32,44 @@
     object-fit: cover;
 }
 
-.section {
-    
+.controls {
+    position: fixed;
+    // right: 30px;
+    left: 0;
+    width: 100%;
+    top: 50%;
+
+    display: flex;
+    justify-content: space-between;
+    // padding: 0 50px;
+    // flex-direction: column;
+
+    .controlItem {
+        // border: none;
+        margin: 0 60px;
+        // padding: 15px;
+        // border-radius: 50px;
+    }
+}
+
+.arrow.arrowLeft {
+  @include chevron('left', 20px, 10px, rgb(61, 61, 61));
+  box-shadow: 5px -5px 0 #FFF;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease
+ }
+
+
+.arrow.arrowRight {
+  @include chevron('right', 20px, 10px, rgb(61, 61, 61));
+  box-shadow: 5px -5px 0 #FFF;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease
+ }
+     
+.arrow.arrowLeft:hover {
+  box-shadow: 10px -10px 0 rgba(255,128,128,.5);
+}
+.arrow.arrowRight:hover {
+  box-shadow: 10px -10px 0 rgba(255,128,128,.5);
 }
