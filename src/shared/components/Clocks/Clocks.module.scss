@@ -1,15 +1,41 @@
+.wrapper {
+    position: fixed;
+    
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    color: white;
+
+    font-family: 'Source Code Pro', monospace;
+    text-align: center;
+}
 
 .clock {
     font-size: 10em;
-    font-family: 'Source Code Pro', monospace;
     font-weight: bold;
-    position: fixed;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-    color: white;
     user-select: none;
-    // box-shadow: 15px 15px 15px 15px #000;
+    
 }
+
+.greeting {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.inputName {
+    font-size: 2.5rem;
+    padding: 10px 50px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    // border-bottom: 5px solid white;
+    background-color: rgba(97, 97, 97, 0.5);
+    color: white;
+}
+
